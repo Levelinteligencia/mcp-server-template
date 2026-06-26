@@ -1,5 +1,5 @@
 """
-Ferramenta de exemplo — LevelInteligencIA
+Ferramenta de exemplo — LevelInteligencIA 
 
 Este módulo ilustra o padrão de integração com sistemas externos.
 Adapte para sua API, banco de dados ou qualquer fonte de dados.
