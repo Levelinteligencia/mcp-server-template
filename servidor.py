@@ -1,5 +1,5 @@
 """
-MCP Server — Ponto de Entrada
+MCP Server — Ponto de Entrada 
 LevelInteligencIA
 
 Este servidor expõe ferramentas para agentes de IA via Model Context Protocol (MCP).
