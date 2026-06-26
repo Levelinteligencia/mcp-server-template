@@ -1,4 +1,4 @@
-"""
+""" 
 Exemplo de Agente consumindo o MCP Server — LevelInteligencIA
 
 Ilustra como um agente usa as ferramentas expostas pelo MCP Server
