@@ -13,10 +13,10 @@ O MCP Server funciona como uma camada intermediária inteligente entre o agente 
 
 ```
 ┌─────────────┐     ┌─────────────────────┐     ┌──────────────┐
-│  Agente IA  │────▶│     MCP Server      │────▶│ Sistema      │
-│             │◀────│  • Traduz formatos  │◀────│ Externo      │
+│  Agente IA  │────▶│     MCP Server      │────▶│   Sistema    │
+│             │◀────│  • Traduz formatos  │◀────│   Externo    │
 │  Raciocina  │     │  • Valida dados     │     │ (API REST,   │
-│  e age      │     │  • Trata erros      │     │  DB, ERP...) │
+│  e age      │     │  • Trata erros      │     │  BD, ERP...) │
 └─────────────┘     │  • Normaliza saídas │     └──────────────┘
                     └─────────────────────┘
 ```
@@ -27,23 +27,23 @@ O MCP Server funciona como uma camada intermediária inteligente entre o agente 
 
 ```
 mcp-server-template/
-├── server.py                  # Entry point do MCP Server
-├── tools/
+├── servidor.py                # Ponto de entrada do MCP Server
+├── ferramentas/
 │   ├── __init__.py
-│   └── example_tool.py        # Exemplo de ferramenta exposta ao agente
-├── agents/
-│   └── example_agent.py       # Exemplo de agente consumindo o server
+│   └── ferramenta_exemplo.py  # Exemplo de ferramenta exposta ao agente
+├── agentes/
+│   └── agente_exemplo.py      # Exemplo de agente consumindo o servidor
 ├── docs/
-│   └── architecture.md        # Decisões arquiteturais
+│   └── arquitetura.md         # Decisões arquiteturais
 ├── requirements.txt
-└── .env.example
+└── .env.exemplo
 ```
 
 ---
 
 ## Decisões arquiteturais
 
-### Por que MCP e não chamada direta?
+### Por que MCP Server e não chamada direta?
 
 | Abordagem | Vantagem | Risco |
 |---|---|---|
@@ -58,8 +58,8 @@ A escolha pelo MCP Server foi motivada por três fatores:
 ### Princípios aplicados
 
 - **Separação de responsabilidades**: o agente raciocina, o MCP Server integra
-- **Fail gracefully**: erros são capturados, logados e retornados de forma estruturada
-- **Single source of truth**: toda normalização de dados acontece no servidor, nunca no agente
+- **Falha controlada**: erros são capturados, registrados e retornados de forma estruturada
+- **Fonte única de verdade**: toda normalização de dados acontece no servidor, nunca no agente
 
 ---
 
@@ -78,24 +78,24 @@ pip install -r requirements.txt
 
 ### 3. Configure as variáveis de ambiente
 ```bash
-cp .env.example .env
+cp .env.exemplo .env
 # edite o .env com suas credenciais
 ```
 
 ### 4. Inicie o servidor
 ```bash
-python server.py
+python servidor.py
 ```
 
 ---
 
-## Stack
+## Tecnologias utilizadas
 
 - **Python 3.11+**
 - **MCP SDK** — Model Context Protocol
 - **httpx** — chamadas HTTP assíncronas
 - **python-dotenv** — gestão de variáveis de ambiente
-- **loguru** — logging estruturado
+- **loguru** — registro de logs estruturado
 
 ---
 
