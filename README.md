@@ -1,5 +1,5 @@
 # MCP Server Template
-
+ 
 > Template de arquitetura para integração de Agentes de IA com sistemas externos via Model Context Protocol (MCP).
 > Desenvolvido por [LevelInteligencIA](https://github.com/Levelinteligencia)
 
@@ -7,7 +7,7 @@
 
 ## O problema que isso resolve
 
-Agentes de IA que acessam sistemas externos diretamente são frágeis. Quando a API retorna dados incompletos, em formato inesperado ou simplesmente falha, o agente para — e num sistema autônomo, parar tem custo operacional real.
+Agentes de IA que acessam sistemas externos diretamente são frágeis. Quando a API retorna dados incompletos, em formato inesperado ou simplesmente falha, o agente para, e num sistema autônomo, parar tem custo operacional real.
 
 O MCP Server funciona como uma camada intermediária inteligente entre o agente e o mundo externo. O agente só recebe o que precisa, no formato que espera, sempre.
 
@@ -19,6 +19,7 @@ O MCP Server funciona como uma camada intermediária inteligente entre o agente 
 │  e age      │     │  • Trata erros      │     │  BD, ERP...) │
 └─────────────┘     │  • Normaliza saídas │     └──────────────┘
                     └─────────────────────┘
+
 ```
 
 ---
