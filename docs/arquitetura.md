@@ -1,4 +1,4 @@
-# Decisões Arquiteturais — MCP Server Template
+# Decisões Arquiteturais — MCP Server Template 
 
 ## Contexto
 
